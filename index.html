@@ -31,13 +31,120 @@ a {
   margin-top: 10px;
   text-align: left;
 }
-  
+    padding: 0;
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  -webkit-perspective: 100px;
+          perspective: 100px;
+}
+
+div.tree,
+.tree div {
+  background: black;
+  /*border-radius:$w;*/
+  width: 100px;
+  height: 10px;
+  position: absolute;
+  -webkit-box-reflect: above;
+  margin-left: -10px;
+  -webkit-animation-name: rot;
+          animation-name: rot;
+  -webkit-animation-duration: 2.02s;
+          animation-duration: 2.02s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-transform-origin: 5px 5px;
+      -ms-transform-origin: 5px 5px;
+          transform-origin: 5px 5px;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+div.root {
+  bottom: 0;
+  left: 50%;
+  -webkit-animation-name: rot-root;
+          animation-name: rot-root;
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+}
+.tree div,
+.tree div div {
+  top: 0;
+  left: 100px;
+}
+
+@-webkit-keyframes rot {
+  from {
+    -webkit-transform: rotate(30deg) scale(0.70711);
+            transform: rotate(30deg) scale(0.70711);
+  }
+  to {
+    -webkit-transform: rotate(40deg) scale(0.70711);
+            transform: rotate(40deg) scale(0.70711);
+  }
+}
+
+@keyframes rot {
+  from {
+    -webkit-transform: rotate(30deg) scale(0.70711);
+            transform: rotate(30deg) scale(0.70711);
+  }
+  to {
+    -webkit-transform: rotate(40deg) scale(0.70711);
+            transform: rotate(40deg) scale(0.70711);
+  }
+}
+@-webkit-keyframes rot-root {
+  from {
+    -webkit-transform: rotate(-95deg);
+            transform: rotate(-95deg);
+  }
+  to {
+    -webkit-transform: rotate(-85deg);
+            transform: rotate(-85deg);
+  }
+}
+@keyframes rot-root {
+  from {
+    -webkit-transform: rotate(-95deg);
+            transform: rotate(-95deg);
+  }
+  to {
+    -webkit-transform: rotate(-85deg);
+            transform: rotate(-85deg);
+  }
+}
     </style>
   </head>
   <body>
    <div class="wrap">
   <a href="#" class="start">What is this website?</a>
   <div class="test" data-text="I've found a world in you and I keep travelling through your continent's and as I get to know you I dive deeper into your oceans.... where there's no return. <br /> - Fawziyah Alhamli "></div>
+</div>
+<div class="root tree">
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
